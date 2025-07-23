@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jogo do Tigrinho V4</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jogo do Tigrinho V5</title><link rel="stylesheet" href="style.css"/></head>
 <body>
-  <div class="background"></div>
-  <div class="container">
-    <h1>🐯 Jogo do Tigrinho</h1>
-    <p>🎟️ Fichas: <span id="fichas">10</span></p>
-    <div class="slot-machine">
-      <div class="reel" id="reel1"></div>
-      <div class="reel" id="reel2"></div>
-      <div class="reel" id="reel3"></div>
-    </div>
-    <p id="mensagem">Clique para girar!</p>
-    <button onclick="girar()">🎰 Girar</button>
-    <audio id="som-spin" src="assets/spin.mp3"></audio>
-    <audio id="som-win" src="assets/win.mp3"></audio>
-    <audio id="som-lose" src="assets/lose.mp3"></audio>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+<div class="container">
+<h1>🐯 Jogo do Tigrinho</h1>
+<p>🎟️ Fichas: <span id="fichas">10</span></p>
+<div class="machine">
+<div class="slot">
+<div class="reel" id="reel1"></div>
+<div class="reel" id="reel2"></div>
+<div class="reel" id="reel3"></div>
+</div>
+<img src="assets/alavanca.png" class="alavanca" id="alavanca" onclick="puxarAlavanca()" />
+</div>
+<p id="mensagem">Puxe a alavanca para girar!</p>
+<audio id="som-spin" src="assets/spin.mp3"></audio>
+<audio id="som-win" src="assets/win.mp3"></audio>
+<audio id="som-lose" src="assets/lose.mp3"></audio>
+<audio id="som-alavanca" src="assets/alavanca.mp3"></audio>
+</div><script src="script.js"></script>
+</body></html>
