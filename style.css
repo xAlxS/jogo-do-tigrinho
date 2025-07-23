@@ -1,0 +1,43 @@
+
+body {
+  background: linear-gradient(135deg, #ffce00, #ff4e00);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+.game-container {
+  max-width: 400px;
+  margin: auto;
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #000;
+}
+.slot img {
+  width: 150px;
+  animation: pulse 1s infinite alternate;
+}
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 10px;
+  background: #00cc66;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.afiliado {
+  display: inline-block;
+  margin-top: 15px;
+  background: #ff0055;
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
