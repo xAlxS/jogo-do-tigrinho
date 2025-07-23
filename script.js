@@ -1,19 +1,42 @@
 
-let fichas = 10;
+const simbolos = ['🍊', '💰', '🎲', '🐯', '🔔'];
+function tocarSom(id) {
+  const audio = document.getElementById(id);
+  audio.currentTime = 0;
+  audio.play();
+}
 function girar() {
-  if (fichas <= 0) {
-    document.getElementById("mensagem").innerText = "Você ficou sem fichas!";
-    return;
+  tocarSom('som-spin');
+  const reels = ['reel1', 'reel2', 'reel3'];
+  let resultado = [];
+  for (let i = 0; i < reels.length; i++) {
+    const reel = document.getElementById(reels[i]);
+    reel.innerHTML = '';
+    let col = [];
+    for (let j = 0; j < 3; j++) {
+      let simbolo = simbolos[Math.floor(Math.random() * simbolos.length)];
+      let el = document.createElement('div');
+      el.textContent = simbolo;
+      reel.appendChild(el);
+      col.push(simbolo);
+    }
+    resultado.push(col);
   }
-  fichas--;
-  let resultado = Math.random();
-  let msg = "";
-  if (resultado > 0.7) {
-    fichas += 3;
-    msg = "🎉 Você ganhou 3 fichas!";
+  setTimeout(() => verificar(resultado), 500);
+}
+function verificar(r) {
+  let ganhou = false;
+  for (let i = 0; i < 3; i++) {
+    if (r[0][i] === r[1][i] && r[1][i] === r[2][i]) {
+      ganhou = true;
+    }
+  }
+  const msg = document.getElementById('mensagem');
+  if (ganhou) {
+    tocarSom('som-win');
+    msg.innerText = "🎉 Você ganhou!";
   } else {
-    msg = "😢 Não foi dessa vez!";
+    tocarSom('som-lose');
+    msg.innerText = "😢 Tente novamente!";
   }
-  document.getElementById("mensagem").innerText = msg;
-  document.getElementById("fichas").innerText = fichas;
 }
