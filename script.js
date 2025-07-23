@@ -1,3 +1,4 @@
+
 const simbolos = ["wild.png", "laranja.png", "envelope.png", "sino.png", "moeda.png"];
 function tocarSom(id) {
   const audio = document.getElementById(id);
