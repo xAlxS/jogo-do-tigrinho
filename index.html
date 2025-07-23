@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jogo do Tigrinho</title>
+  <title>Jogo do Tigrinho V2</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="game-container">
-    <h1>🎰 Jogo do Tigrinho 🎰</h1>
-    <div class="slot">
-      <img id="tigre" src="assets/tigre.png" alt="Tigrinho">
+  <div class="container">
+    <h1>🐯 Jogo do Tigrinho</h1>
+    <div class="slot-machine">
+      <div class="reel" id="reel1"></div>
+      <div class="reel" id="reel2"></div>
+      <div class="reel" id="reel3"></div>
     </div>
-    <p id="mensagem">Clique no botão para girar</p>
-    <p>Fichas: <span id="fichas">10</span></p>
-    <button onclick="girar()">Girar</button>
-    <a href="https://exemplo.com" target="_blank" class="afiliado">🎲 Jogar de Verdade</a>
+    <p id="mensagem">Clique para girar!</p>
+    <button onclick="girar()">🎰 Girar</button>
+    <audio id="som-spin" src="assets/spin.mp3"></audio>
+    <audio id="som-win" src="assets/win.mp3"></audio>
+    <audio id="som-lose" src="assets/lose.mp3"></audio>
   </div>
   <script src="script.js"></script>
 </body>
